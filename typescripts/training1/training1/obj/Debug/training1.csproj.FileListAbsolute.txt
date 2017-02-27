@@ -1,0 +1,6 @@
+C:\Users\123\Documents\Visual Studio 2015\Projects\typescripts\training1\training1\bin\training1.dll.config
+C:\Users\123\Documents\Visual Studio 2015\Projects\typescripts\training1\training1\bin\training1.dll
+C:\Users\123\Documents\Visual Studio 2015\Projects\typescripts\training1\training1\bin\training1.pdb
+C:\Users\123\Documents\Visual Studio 2015\Projects\typescripts\training1\training1\obj\Debug\training1.csprojResolveAssemblyReference.cache
+C:\Users\123\Documents\Visual Studio 2015\Projects\typescripts\training1\training1\obj\Debug\training1.dll
+C:\Users\123\Documents\Visual Studio 2015\Projects\typescripts\training1\training1\obj\Debug\training1.pdb
