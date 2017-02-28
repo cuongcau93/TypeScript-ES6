@@ -13,6 +13,26 @@ let myObj = {
     age: 18
 }
 printLabel(myObj);
+//Example 1.2
+interface RectangleOption {
+    width: number;
+    length: number;
+    height: number;
+}
+
+let drawRectangle = function (option: RectangleOption) {
+    let width = option.width;
+    let length = option.length;
+    let height = option.height;
+    console.log("Example 1.2: " + width + " " + length + " " + height);
+}
+drawRectangle({
+    width: 100,
+    length: 200,
+    height: 300
+});
+console.log("ahii");
+
 
 //Example basic 2
 interface SquareConfig {
@@ -156,6 +176,7 @@ class DigitalClock implements ClockInterface {
     constructor(h: number, m: number) { }
     tick() {
         console.log("beep beep")
+        console.log("sssssssss");
     }
 }
 
