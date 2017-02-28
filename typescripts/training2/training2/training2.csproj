@@ -28,6 +28,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="Class.ts" />
+    <TypeScriptCompile Include="Interface.ts" />
+    <TypeScriptCompile Include="let.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">

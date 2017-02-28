@@ -8,18 +8,70 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+console.log("Properties Interface");
 function printLabel(labelledObj) {
-    var result = "";
-    console.log(result);
+    var result = labelledObj.label;
+    console.log("Example 1: " + result);
 }
 var myObj = {
     number: 10,
     label: "I LOVE YOU",
     age: 18
 };
+myObj.label = "Full";
 printLabel(myObj);
+var drawRectangle = function (option) {
+    var width = option.width;
+    var length = option.length;
+    var height;
+    if (option.height) {
+        height = option.height;
+    }
+    {
+        height = 0;
+    }
+    console.log("Example 1.2: " + width + " " + length + " " + height);
+};
+drawRectangle({
+    width: 100,
+    length: 200
+});
+var students = function (mask, obj) {
+    var name = obj.name;
+    var age = obj.age;
+    var gender = obj.gender;
+    var a = mask;
+    console.log("Example 1.3: " + name + " " + age + " " + gender + " " + a);
+};
+students(9, {
+    name: "Nguyen Manh Cuong",
+    age: 19,
+    gender: false
+});
+var student4 = function (obj) {
+    var name = obj.name;
+    var age = obj.age;
+    var gender = obj.gender;
+    var a = obj.a;
+    console.log("Example 1.4: " + name + " " + age + " " + " " + gender + " " + a);
+};
+student4({
+    name: "Nguyen Manh Cuong",
+    age: 18,
+    gender: false,
+    a: 12
+});
+var po = {
+    x: 10,
+    y: 20
+};
+var point11;
+point11 = po;
+point11.x = 20;
+console.log("Example 1.5: " + point11.x + " " + point11.y);
+//bat buoc tra ve cai nay:{ color: string; area: number; lol: number }
 function createSquare(config) {
-    var newSquare = { color: "white", area: 100 };
+    var newSquare = { color: "white", area: 100, lol: 10 };
     if (config.color) {
         newSquare.color = config.color;
     }
@@ -48,25 +100,49 @@ var ro = arr1;
 //ro.length = 100; error "Kich thuoc khong doi"
 //arr1 = ro; khong dung kieu, ko the giao mang cho cai khac ko phai readonly
 arr1 = ro; // chi co the gan duoc khi thay doi kieu
-//Function Types
+//2. Function Types
 console.log("Function Types Interface");
 var mySearch;
 mySearch = function (source, subString) {
     var result = source.search(subString);
     return result > -1;
 };
-console.log(mySearch("aaa", "aaa"));
-// Cach ma ten cac parameters khong can phai phu hop thi ke thua theo cach sau
+console.log("Example 2: " + mySearch("aaa", "aaa"));
+// Cach ma ten cac parameters khong can phai phu hop.
 console.log("Function TypeScript the names of the parameters do not need to match");
 var mySearchFunction;
 mySearchFunction = function (src, sub) {
     var result = src.search(sub);
     return result > -1;
 };
+var getArr;
+getArr = function (n) {
+    n.push(5);
+    //console.log(n.length);
+    return n;
+};
+console.log("Example 2.1: " + getArr([1, 2]));
+var checkGender;
+checkGender = function (g) {
+    return g;
+};
+console.log("Example 2.2: " + checkGender(true));
 var myArray;
 myArray = ["Bob", "Fred"];
 var myStr = myArray[0];
-console.log(myStr);
+console.log("Example 3: " + myStr);
+var myArr3;
+myArr3 = ["Home", "School"];
+myArr3.push("Hello");
+console.log("Example 3.1: " + myArr3[0] + " " + myArr3[1] + " " + myArr3[2] + " " + "+Length: " + myArr3.length);
+var myArr32;
+var myObj32 = {
+    1: 1,
+    "age": 2,
+    "gender": 3
+};
+myArr32 = myObj32;
+console.log(myObj32['name']);
 //vd2
 var Animal = (function () {
     function Animal() {
@@ -80,10 +156,6 @@ var Dog = (function (_super) {
     }
     return Dog;
 }(Animal));
-//interface NotOkay {
-//    [x: number]: Animal;
-//    [x: string]: Dog;
-//}
 var as = new Dog();
 console.log(as);
 var mya;
@@ -122,4 +194,14 @@ var AnalogClock = (function () {
 var digital = createClock(DigitalClock, 12, 17);
 var analog = createClock(AnalogClock, 7, 32);
 console.log(digital.tick());
+//class Persons implements PersonInterface() {
+//    name: string;
+//    age: number;
+//    constructor(name: string, age: number) {
+//        this.setPerson({
+//            name: name,
+//            age: age
+//        });
+//    }
+//}
 //# sourceMappingURL=Interface.js.map
