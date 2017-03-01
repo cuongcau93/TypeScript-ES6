@@ -221,4 +221,129 @@ var Employee34 = (function (_super) {
 }(Person34));
 var howard34 = new Employee34("Howard", "Sales");
 //let john = new Person34("John"); // Error: The 'Person' constructor is protected
+//Example 4: Readonly modifier
+console.log("readonly properties");
+var Octopus = (function () {
+    function Octopus(theName) {
+        this.numberOfLegs = 8;
+        this.name = theName;
+    }
+    return Octopus;
+}());
+var dad = new Octopus("Example 4.1: readonly properties");
+//dad.name = "LOL"; error because name is type readonly
+//Example 4.2: readonly parameter properties
+var Octopuss = (function () {
+    function Octopuss(name) {
+        this.name = name;
+        this.numberOfLegs = 8;
+        console.log("readonly parameter properties " + name);
+    }
+    return Octopuss;
+}());
+//Example 5:Set vs Get in TypeScript
+var passcode = "secret passcode";
+var Employee5 = (function () {
+    function Employee5() {
+    }
+    Object.defineProperty(Employee5.prototype, "fullName", {
+        get: function () {
+            return this._fullName;
+        },
+        set: function (newName) {
+            if (passcode && passcode == "secret passcode") {
+                this._fullName = newName;
+            }
+            else {
+                console.log("Error: Unauthorized update of employee!");
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Employee5;
+}());
+var employee5 = new Employee5();
+employee5.fullName = "Nguyen Manh Cuong";
+if (employee5.fullName) {
+    console.log("Example 5.1: " + employee5.fullName);
+}
+//Example 6.1 static Properties in typeScript
+var Grid = (function () {
+    function Grid(scale) {
+        this.scale = scale;
+    }
+    Grid.prototype.calculateDistanceFromOrigin = function (point) {
+        var xDist = (point.x - Grid.origin.x);
+        var yDist = (point.y - Grid.origin.y);
+        return Math.sqrt(xDist * xDist + yDist * yDist) / this.scale;
+    };
+    return Grid;
+}());
+Grid.origin = { x: 0, y: 0 };
+var grid = new Grid(1.0);
+console.log("Example 6.1: " + grid.calculateDistanceFromOrigin({ x: 10, y: 20 }));
+//Example 7: abstrack class
+var Department = (function () {
+    function Department(name) {
+        this.name = name;
+    }
+    Department.prototype.printName = function () {
+        console.log("Department name: " + this.name);
+    };
+    return Department;
+}());
+var AccountingDepartment = (function (_super) {
+    __extends(AccountingDepartment, _super);
+    function AccountingDepartment() {
+        return _super.call(this, "Nguyen Manh Cuong ab") || this;
+    }
+    AccountingDepartment.prototype.printMeeting = function () {
+        console.log("Hello");
+    };
+    AccountingDepartment.prototype.generateRepoets = function () {
+        console.log("Goodbye");
+    };
+    return AccountingDepartment;
+}(Department));
+var department; //ok to create a reference to an abstract type
+//department = new Department(); // error: cannot create an instance of an abstract class
+department = new AccountingDepartment(); // ok to create and assign a non-abstract subclass
+department.printName();
+department.printMeeting();
+//department.generateRepoets(); // error: method doesn't exist on declared abstract type
+//Example 8: Advanced Techniques
+var Greeter8 = (function () {
+    function Greeter8(message) {
+        this.greeting = message;
+    }
+    Greeter8.prototype.greet = function () {
+        return "Hello, " + this.greeting;
+    };
+    return Greeter8;
+}());
+var greeter8;
+greeter8 = new Greeter8("World");
+console.log("Example 8.1: " + greeter8.greet());
+var Greeter9 = (function () {
+    function Greeter9() {
+    }
+    Greeter9.prototype.greet = function () {
+        if (this.greeting) {
+            return "Hello, " + this.greeting;
+        }
+        else {
+            return Greeter9.standardGreeting;
+        }
+    };
+    return Greeter9;
+}());
+Greeter9.standardGreeting = "Hello, there";
+var greeter1;
+greeter1 = new Greeter9();
+console.log(greeter1.greet());
+var greeterMaker = Greeter9;
+greeterMaker.standardGreeting = "Hey there!";
+var greeter2 = new greeterMaker();
+console.log(greeter2.greet());
 //# sourceMappingURL=Class.js.map

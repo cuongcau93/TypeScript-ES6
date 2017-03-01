@@ -216,4 +216,126 @@ class Employee34 extends Person34 {
 
 let howard34 = new Employee34("Howard", "Sales");
 //let john = new Person34("John"); // Error: The 'Person' constructor is protected
+//Example 4: Readonly modifier
+console.log("readonly properties");
+class Octopus {
+    readonly name: string;
+    readonly numberOfLegs: number = 8;
+    constructor(theName: string) {
+        this.name = theName;
+    }
+}
+
+let dad = new Octopus("Example 4.1: readonly properties");
+//dad.name = "LOL"; error because name is type readonly
+
+//Example 4.2: readonly parameter properties
+class Octopuss {
+    readonly numberOfLegs: number = 8;
+    constructor(readonly name: string) {
+        console.log("readonly parameter properties "+name);
+    }
+}
+
+//Example 5:Set vs Get in TypeScript
+let passcode = "secret passcode";
+class Employee5 {
+    private _fullName: string;
+    get fullName(): string {
+        return this._fullName;
+    }
+    set fullName(newName: string) {
+        if (passcode && passcode == "secret passcode") {
+            this._fullName = newName;
+        }
+        else {
+            console.log("Error: Unauthorized update of employee!");
+        }
+    }
+}
+
+let employee5 = new Employee5();
+employee5.fullName = "Nguyen Manh Cuong";
+if (employee5.fullName) {
+    console.log("Example 5.1: " + employee5.fullName);
+}
+
+//Example 6.1 static Properties in typeScript
+class Grid {
+    static origin = { x: 0, y: 0 };
+    constructor(public scale: number) { }
+    calculateDistanceFromOrigin(point: { x: number; y: number }) {
+        let xDist = (point.x - Grid.origin.x);
+        let yDist = (point.y - Grid.origin.y);
+        return Math.sqrt(xDist * xDist + yDist * yDist) / this.scale;
+    }
+}
+let grid = new Grid(1.0);
+console.log("Example 6.1: " + grid.calculateDistanceFromOrigin({ x: 10, y: 20 }));
+
+//Example 7: abstrack class
+abstract class Department {
+    constructor(public name: string) {
+
+    }
+    printName(): void {
+        console.log("Department name: " + this.name);
+    }
+    abstract printMeeting(): void; //must be implemented in derived classes
+}
+
+class AccountingDepartment extends Department {
+    constructor() {
+        super("Nguyen Manh Cuong ab");
+    }
+    printMeeting(): void {
+        console.log("Hello");
+    }
+    generateRepoets(): void {
+        console.log("Goodbye");
+    }
+}
+let department: Department; //ok to create a reference to an abstract type
+//department = new Department(); // error: cannot create an instance of an abstract class
+department = new AccountingDepartment(); // ok to create and assign a non-abstract subclass
+department.printName();
+department.printMeeting();
+//department.generateRepoets(); // error: method doesn't exist on declared abstract type
+
+//Example 8: Advanced Techniques
+class Greeter8 {
+    greeting: string;
+    constructor(message: string) {
+        this.greeting = message;
+    }
+    greet() {
+        return "Hello, " + this.greeting;
+    }
+}
+let greeter8: Greeter8;
+greeter8 = new Greeter8("World");
+console.log("Example 8.1: " + greeter8.greet());
+
+class Greeter9 {
+    static standardGreeting = "Hello, there";
+    greeting: string;
+    greet() {
+        if (this.greeting) {
+            return "Hello, " + this.greeting;
+        }
+        else {
+            return Greeter9.standardGreeting;
+        }
+    }
+}
+
+let greeter1: Greeter9;
+greeter1 = new Greeter9();
+console.log(greeter1.greet());
+
+let greeterMaker: typeof Greeter9 = Greeter9;
+greeterMaker.standardGreeting = "Hey there!";
+
+let greeter2: Greeter9 = new greeterMaker();
+console.log(greeter2.greet());
 
