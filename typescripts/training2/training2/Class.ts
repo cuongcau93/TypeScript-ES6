@@ -133,3 +133,87 @@ let man = new Man("CuongNm", 24, true);
 console.log("Example 2.4: " + man.run() + " / " + man.getGender());
 
 //public, private, and protected modifiers
+//Example 3.1: public by default
+class Animal3 {
+    public name: string;
+    public constructor(theName: string) {
+        this.name = theName;
+    }
+    public move(distanceInmeters): string {
+        return `${this.name} moved ${distanceInmeters}m`;
+    }
+}
+let animal3 = new Animal3("Nguyen Manh Cuong");
+console.log("Example 3.1: " + animal3.name);
+//Example 3.2: Understanding private
+class Animal31 {
+    private name: string;
+    constructor(theName: string) {
+        this.name = theName;
+    }
+}
+class Rhino extends Animal31 {
+    constructor() {
+        super("Rhino");
+    }
+}
+class Employee31 {
+    private name: string;
+    constructor(theName: string) {
+        this.name = theName;
+    }
+}
+let animal31 = new Animal31("Nguyen Manh Cuong");
+let rhino = new Rhino();
+let employee31 = new Employee31("Bob");
+animal31 = rhino;
+//animal31 = employee31; khong tuong thich
+//console.log("Example 3: " + animal31.name);
+
+//Example 3.3: Understanding protected
+class Person33 {
+    public name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
+class Employee33 extends Person33 {
+    private departement: string;
+    constructor(name: string, departement: string) {
+        super(name);
+        this.departement = departement;
+    }
+    public getElevatorPitch(): string {
+        return `Hello, my name is ${this.name} and I work in ${this.departement}.`;
+    }
+}
+let test = new Person33("lol");
+let howard = new Employee33("Cuong", "sales");
+console.log("Example 3.3: " + howard.getElevatorPitch());
+//console.log(howard.name); error because name in person is protected
+//de protected or private then cac doi tuong ben ngoai se khong goi duoc no
+//protected thi cac lop con van ke thua duoc
+//Example 3.4: Inheritance in method protected
+class Person34 {
+    protected name: string;
+    protected constructor(theName: string) { this.name = theName; }
+}
+
+// Employee can extend Person
+class Employee34 extends Person34 {
+    private department: string;
+
+    constructor(name: string, department: string) {
+        super(name);
+        this.department = department;
+    }
+
+    public getElevatorPitch() {
+        return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+    }
+}
+
+let howard34 = new Employee34("Howard", "Sales");
+//let john = new Person34("John"); // Error: The 'Person' constructor is protected
+

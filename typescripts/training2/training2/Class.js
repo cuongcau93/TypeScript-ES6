@@ -136,4 +136,89 @@ var Man = (function (_super) {
 var man = new Man("CuongNm", 24, true);
 console.log("Example 2.4: " + man.run() + " / " + man.getGender());
 //public, private, and protected modifiers
+//Example 3.1: public by default
+var Animal3 = (function () {
+    function Animal3(theName) {
+        this.name = theName;
+    }
+    Animal3.prototype.move = function (distanceInmeters) {
+        return this.name + " moved " + distanceInmeters + "m";
+    };
+    return Animal3;
+}());
+var animal3 = new Animal3("Nguyen Manh Cuong");
+console.log("Example 3.1: " + animal3.name);
+//Example 3.2: Understanding private
+var Animal31 = (function () {
+    function Animal31(theName) {
+        this.name = theName;
+    }
+    return Animal31;
+}());
+var Rhino = (function (_super) {
+    __extends(Rhino, _super);
+    function Rhino() {
+        return _super.call(this, "Rhino") || this;
+    }
+    return Rhino;
+}(Animal31));
+var Employee31 = (function () {
+    function Employee31(theName) {
+        this.name = theName;
+    }
+    return Employee31;
+}());
+var animal31 = new Animal31("Nguyen Manh Cuong");
+var rhino = new Rhino();
+var employee31 = new Employee31("Bob");
+animal31 = rhino;
+//animal31 = employee31; khong tuong thich
+//console.log("Example 3: " + animal31.name);
+//Example 3.3: Understanding protected
+var Person33 = (function () {
+    function Person33(name) {
+        this.name = name;
+    }
+    return Person33;
+}());
+var Employee33 = (function (_super) {
+    __extends(Employee33, _super);
+    function Employee33(name, departement) {
+        var _this = _super.call(this, name) || this;
+        _this.departement = departement;
+        return _this;
+    }
+    Employee33.prototype.getElevatorPitch = function () {
+        return "Hello, my name is " + this.name + " and I work in " + this.departement + ".";
+    };
+    return Employee33;
+}(Person33));
+var test = new Person33("lol");
+var howard = new Employee33("Cuong", "sales");
+console.log("Example 3.3: " + howard.getElevatorPitch());
+//console.log(howard.name); error because name in person is protected
+//de protected or private then cac doi tuong ben ngoai se khong goi duoc no
+//protected thi cac lop con van ke thua duoc
+//Example 3.4: Inheritance in method protected
+var Person34 = (function () {
+    function Person34(theName) {
+        this.name = theName;
+    }
+    return Person34;
+}());
+// Employee can extend Person
+var Employee34 = (function (_super) {
+    __extends(Employee34, _super);
+    function Employee34(name, department) {
+        var _this = _super.call(this, name) || this;
+        _this.department = department;
+        return _this;
+    }
+    Employee34.prototype.getElevatorPitch = function () {
+        return "Hello, my name is " + this.name + " and I work in " + this.department + ".";
+    };
+    return Employee34;
+}(Person34));
+var howard34 = new Employee34("Howard", "Sales");
+//let john = new Person34("John"); // Error: The 'Person' constructor is protected
 //# sourceMappingURL=Class.js.map
