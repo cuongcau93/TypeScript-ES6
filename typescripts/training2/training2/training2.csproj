@@ -29,6 +29,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="Class.ts" />
+    <TypeScriptCompile Include="function.ts" />
     <TypeScriptCompile Include="Interface.ts" />
     <TypeScriptCompile Include="let.ts" />
   </ItemGroup>

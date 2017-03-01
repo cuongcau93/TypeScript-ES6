@@ -82,3 +82,13 @@ C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\Int
 C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\Interface.js.map
 C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\let.js
 C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\let.js.map
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\app.js
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\app.js.map
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\Class.js
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\Class.js.map
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\function.js
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\function.js.map
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\Interface.js
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\Interface.js.map
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\let.js
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\let.js.map

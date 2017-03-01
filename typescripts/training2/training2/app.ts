@@ -2,14 +2,12 @@
     element: HTMLElement;
     span: HTMLElement;
     timerToken: number;
-    name: string;
     constructor(element: HTMLElement) {
         this.element = element;
         this.element.innerHTML += "The time is: ";
         this.span = document.createElement('span');
         this.element.appendChild(this.span);
         this.span.innerText = new Date().toUTCString();
-        this.name = "cuong"
     }
 
     start() {
@@ -153,7 +151,6 @@ class Employee extends Person {
 
     getId() {
         return super.getId();
-        //console.log("aaaaaa");
     }
 
     getMoney() {
@@ -161,7 +158,7 @@ class Employee extends Person {
     }
 } 
 
-let emp1 = new Employee("LOL");
+let emp1 = new Employee("Tom");
 console.log(emp1.getMoney());
 
 //example constructor

@@ -15,7 +15,6 @@ var Greeter = (function () {
         this.span = document.createElement('span');
         this.element.appendChild(this.span);
         this.span.innerText = new Date().toUTCString();
-        this.name = "cuong";
     }
     Greeter.prototype.start = function () {
         var _this = this;
@@ -155,14 +154,13 @@ var Employee = (function (_super) {
     }
     Employee.prototype.getId = function () {
         return _super.prototype.getId.call(this);
-        //console.log("aaaaaa");
     };
     Employee.prototype.getMoney = function () {
         return _super.prototype.getId.call(this);
     };
     return Employee;
 }(Person));
-var emp1 = new Employee("LOL");
+var emp1 = new Employee("Tom");
 console.log(emp1.getMoney());
 //example constructor
 //No co hai cach gan gia tri
