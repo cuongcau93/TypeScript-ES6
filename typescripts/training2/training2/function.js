@@ -64,6 +64,7 @@ var deck = {
     cards: Array(52),
     createCardPicker: function () {
         var that = this;
+        console.log(this);
         return function () {
             var pickedCard = Math.floor(Math.random() * 52);
             var pickedSuit = Math.floor(pickedCard / 13);
@@ -76,4 +77,92 @@ var deck = {
 };
 var cardPicker = deck.createCardPicker();
 console.log("Example 2.1: " + cardPicker().suit);
+var decks = {
+    suits: ["hearts", "spades", "clubs", "diamonds"],
+    cards: Array(52),
+    creatCardPicker: function () {
+        var _this = this;
+        return function () {
+            var pickedCard = Math.floor(Math.random() * 52);
+            var pickedSuit = Math.floor(pickedCard / 13);
+            return {
+                suit: _this.suits[pickedSuit],
+                card: pickedCard % 13
+            };
+        };
+    }
+};
+var cardPickers = decks.creatCardPicker();
+var pickedCard = cardPickers();
+console.log("card: " + pickedCard.card + " of " + pickedCard.suit);
+console.log("Example 2.2: " + cardPickers);
+var doctor = {
+    names: ["Nguyen", "Manh", "Cuong", "Dep", "Trai"],
+    ages: Array(52),
+    creatPersonDoctor: function () {
+        var _this = this;
+        return function () {
+            return {
+                name: _this.names[1],
+                age: 13
+            };
+        };
+    }
+};
+var doc = doctor.creatPersonDoctor();
+console.log(doc().name);
+var dogs = {
+    names: ["H", "A", "T", "V"],
+    ages: [1, 2, 3, 4],
+    createDog: function () {
+        var _this = this;
+        return function () {
+            return {
+                name: _this.names[1],
+                age: _this.ages[1]
+            };
+        };
+    }
+};
+var Handler = (function () {
+    function Handler() {
+    }
+    Handler.prototype.onClickGood = function (e) {
+        console.log('Clicked!');
+    };
+    return Handler;
+}());
+var h = new Handler();
+console.log(h);
+//uiElement.addClickListener(h.onClickGood);
+//Overloads
+var suitss = ["hearts", "spades", "clubs", "diamonds"];
+function pickCard(x) {
+    if (typeof x == "object") {
+        var pickedCard_1 = Math.floor(Math.random() * x.length);
+        return pickCard;
+    }
+    else if (typeof x == "number") {
+        var pickerdSuit = Math.floor(x / 13);
+        return {
+            suit: suitss[pickerdSuit],
+            card: x % 13
+        };
+    }
+}
+var myDeck = [
+    {
+        suit: "diamonds",
+        card: 2
+    },
+    {
+        suit: "Nguyen Manh Cuong",
+        card: 100
+    }
+];
+var pickCarddd = myDeck[pickCard(myDeck)];
+console.log(pickCarddd);
+console.log("card: " + pickCarddd.card + " of " + pickCarddd.card);
+var pickCardd = pickCard(13);
+console.log(pickCardd.suit);
 //# sourceMappingURL=function.js.map

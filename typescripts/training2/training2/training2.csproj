@@ -30,10 +30,13 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="Class.ts" />
     <TypeScriptCompile Include="function.ts" />
+    <TypeScriptCompile Include="Generics.ts" />
     <TypeScriptCompile Include="Interface.ts" />
     <TypeScriptCompile Include="let.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

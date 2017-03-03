@@ -308,7 +308,9 @@ interface PersonInterface {
         age: number
     }): any;
 }
-
+$(document).ready(function () {
+    
+})
 //class Persons implements PersonInterface() {
 //    name: string;
 //    age: number;

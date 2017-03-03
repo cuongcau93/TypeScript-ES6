@@ -194,6 +194,8 @@ var AnalogClock = (function () {
 var digital = createClock(DigitalClock, 12, 17);
 var analog = createClock(AnalogClock, 7, 32);
 console.log(digital.tick());
+$(document).ready(function () {
+});
 //class Persons implements PersonInterface() {
 //    name: string;
 //    age: number;

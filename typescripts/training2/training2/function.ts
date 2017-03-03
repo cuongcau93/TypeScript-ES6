@@ -75,6 +75,7 @@ let deck = {
     cards: Array(52),
     createCardPicker: function () {
         let that = this;
+        console.log(this);
         return function () {
             let pickedCard = Math.floor(Math.random() * 52);
             let pickedSuit = Math.floor(pickedCard / 13);
@@ -85,6 +86,134 @@ let deck = {
         }
     }
 }
-
 let cardPicker = deck.createCardPicker();
 console.log("Example 2.1: " + cardPicker().suit)
+//this parameter
+interface Card {
+    suit: string;
+    card: number;
+}
+interface Deck {
+    suits: string[];
+    cards: number[];
+    creatCardPicker(this: Deck): () => Card;
+}
+let decks: Deck = {
+    suits: ["hearts", "spades", "clubs", "diamonds"],
+    cards: Array(52),
+    creatCardPicker: function (this: Deck) {
+        return () => {
+            let pickedCard = Math.floor(Math.random() * 52);
+            let pickedSuit = Math.floor(pickedCard / 13);
+            return {
+                suit: this.suits[pickedSuit],
+                card: pickedCard % 13
+            };
+        }
+    }
+}
+
+let cardPickers = decks.creatCardPicker();
+let pickedCard = cardPickers();
+console.log("card: " + pickedCard.card + " of " + pickedCard.suit);
+console.log("Example 2.2: " + cardPickers)
+interface PersonD {
+    name: string;
+    age: number;
+}
+
+interface Doctor {
+    names: string[];
+    ages: number[];
+    creatPersonDoctor(this: Doctor): () => PersonD;
+    //creatPersonDoctor: (this: Doctor) => PersonD;
+}
+let doctor: Doctor = { 
+    names: ["Nguyen", "Manh", "Cuong", "Dep", "Trai"],
+    ages: Array(52),
+    creatPersonDoctor: function (this: Doctor) {
+        return () => {
+            return {
+                name: this.names[1],
+                age: 13
+            };
+        }
+    }
+}
+let doc = doctor.creatPersonDoctor();
+console.log(doc().name);
+
+interface AnimalD {
+    name: string;
+    age: number;
+}
+
+interface Dogs {
+    names: string[];
+    ages: number[];
+    createDog(this: Dogs): () => AnimalD;
+}
+
+let dogs: Dogs = {
+    names: ["H", "A", "T", "V"],
+    ages: [1, 2, 3, 4],
+    createDog(this: Dogs) {
+        return () => {
+            return {
+                name: this.names[1],
+                age: this.ages[1]
+            }
+        }
+    }
+
+}
+
+//this parameters in callbacks
+interface UIElement {
+    addClickListener(onclick: (this: void, e: Event) => void): void;
+}
+class Handler {
+    info: string;
+    onClickGood(this: void, e: Event) {
+        console.log('Clicked!');
+    }
+}
+
+let h = new Handler();
+console.log(h);
+//uiElement.addClickListener(h.onClickGood);
+
+//Overloads
+let suitss = ["hearts", "spades", "clubs", "diamonds"];
+
+function pickCard(x): any {
+    if (typeof x == "object") {
+        let pickedCard = Math.floor(Math.random() * x.length);
+        return pickCard;
+    }
+    else if (typeof x == "number") {
+        let pickerdSuit = Math.floor(x / 13);
+        return {
+            suit: suitss[pickerdSuit],
+            card: x % 13
+        }
+    }
+}
+
+let myDeck = [
+    {
+        suit: "diamonds",
+        card: 2
+    },
+    {
+        suit: "Nguyen Manh Cuong",
+        card: 100
+    }
+];
+
+let pickCarddd = myDeck[pickCard(myDeck)];
+console.log(pickCarddd);
+console.log("card: " + pickCarddd.card + " of " + pickCarddd.card);
+
+let pickCardd = pickCard(13);
+console.log(pickCardd.suit);
