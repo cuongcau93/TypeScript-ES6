@@ -29,6 +29,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="Class.ts" />
+    <TypeScriptCompile Include="Compatibility.ts" />
+    <TypeScriptCompile Include="contextualTyping.ts" />
     <TypeScriptCompile Include="function.ts" />
     <TypeScriptCompile Include="Generics.ts" />
     <TypeScriptCompile Include="Interface.ts" />
@@ -43,6 +45,10 @@
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="js\" />
+    <Folder Include="ts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
