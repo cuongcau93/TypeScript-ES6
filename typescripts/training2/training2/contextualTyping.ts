@@ -22,7 +22,6 @@ module C2T5 {
         return i;
     }
 }
-
 let c2t5 = C2T5.foo(1,"");
 console.log("Example 1.1: " + c2t5);
 
@@ -89,7 +88,6 @@ console.log("Example 1.9: " + c3t8(null, null));
 //var c3t9: number[][] = [[1, 2], [1,2]];
 //console.log("Example 1.91: " + typeof c3t9);
 //console.log("Example 1.91: " + c3t9[0][3]);
-
 var c3t10: IFoo[] = [<IFoo>({ n: 10, s: "cuong" }), <IFoo>({ n: 11 })];
 console.log("Example 1.91: " + typeof c3t10);
 console.log("Example 1.91: " + c3t10[0].s);
@@ -110,6 +108,40 @@ var c3t13 = <IFoo>({
         return s;
     }
 });
-
 console.log("Example 1.94: " + typeof c3t13);
 console.log("Example 1.94: " + c3t13.f(3, "lol"));
+
+var c3t14 = <IFoo>({
+    a: [1, 2, 3],
+});
+
+// CONTEXT: Class property assignment
+class C4T5 {
+    foo: (i: number, s: string) => string;
+    constructor() {
+        this.foo = function (i, s) {
+            return s;
+        }
+    }
+}
+let c4t5 = new C4T5();
+console.log("Example 2.0: " + typeof c4t5);
+console.log("Example 2.0: " + c4t5.foo(3, "hello"))
+
+//CONTEXT: Module property assignment
+module C5T5 {
+    export var foo: (i: number, s: string) => string;
+    foo = function (i, s) {
+        return s;
+    }
+}
+let c5t5 = C5T5;
+console.log("Example 2.1: " + typeof c5t5);
+console.log("Example 2.1: " + c5t5.foo(3, "assignment"))
+
+//CONTEXT: Variable assigment
+let c6t5: (n: number) => IFoo;
+c6t5 = <(n: number) => IFoo>function (n) {
+    return <IFoo>({});
+}
+

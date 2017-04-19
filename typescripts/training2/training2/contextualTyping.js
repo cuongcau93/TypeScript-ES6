@@ -86,4 +86,34 @@ var c3t13 = ({
 });
 console.log("Example 1.94: " + typeof c3t13);
 console.log("Example 1.94: " + c3t13.f(3, "lol"));
+var c3t14 = ({
+    a: [1, 2, 3],
+});
+// CONTEXT: Class property assignment
+var C4T5 = (function () {
+    function C4T5() {
+        this.foo = function (i, s) {
+            return s;
+        };
+    }
+    return C4T5;
+}());
+var c4t5 = new C4T5();
+console.log("Example 2.0: " + typeof c4t5);
+console.log("Example 2.0: " + c4t5.foo(3, "hello"));
+//CONTEXT: Module property assignment
+var C5T5;
+(function (C5T5) {
+    C5T5.foo = function (i, s) {
+        return s;
+    };
+})(C5T5 || (C5T5 = {}));
+var c5t5 = C5T5;
+console.log("Example 2.1: " + typeof c5t5);
+console.log("Example 2.1: " + c5t5.foo(3, "assignment"));
+//CONTEXT: Variable assigment
+var c6t5;
+c6t5 = function (n) {
+    return ({});
+};
 //# sourceMappingURL=contextualTyping.js.map
