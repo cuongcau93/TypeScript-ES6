@@ -145,3 +145,41 @@ c6t5 = <(n: number) => IFoo>function (n) {
     return <IFoo>({});
 }
 
+//Context: Array index assigment
+var c7t2: IFoo[];
+//c7t2[0] = <IFoo>({ n: 1 });
+
+//Context:Object property assigment
+interface IPlaceHolder
+{
+    t1: (s: string) => string;
+    t2: IFoo;
+    t3: number[];
+    t4: () => IFoo;
+    t5: (n: number) => IFoo;
+    t6: (n: number, s: string) => IFoo;
+    t7:
+    {
+        (n: number, s: string): number;
+    }
+
+}
+
+let lastName: string = "Cuong";
+let firstName: string = "Nguyen Manh";
+let fullName: string = `Ten toi la ${lastName} ${firstName}`;
+console.log(fullName);
+
+let xx: [string, number];
+xx = ["Nguyen Manh Cuong", 19];
+console.log(xx[0].substr(1));
+
+let arr: string[] = ["Nguyen", "Manh", "Cuong"];
+let arrlst: Array<number> = [1, 2, 3];
+
+
+
+
+
+
+

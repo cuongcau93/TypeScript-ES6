@@ -338,4 +338,3 @@ greeterMaker.standardGreeting = "Hey there!";
 
 let greeter2: Greeter9 = new greeterMaker();
 console.log(greeter2.greet());
-

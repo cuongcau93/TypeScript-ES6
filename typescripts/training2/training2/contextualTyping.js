@@ -116,4 +116,15 @@ var c6t5;
 c6t5 = function (n) {
     return ({});
 };
+//Context: Array index assigment
+var c7t2;
+var lastName = "Cuong";
+var firstName = "Nguyen Manh";
+var fullName = "Ten toi la " + lastName + " " + firstName;
+console.log(fullName);
+var xx;
+xx = ["Nguyen Manh Cuong", 19];
+console.log(xx[0].substr(1));
+var arr = ["Nguyen", "Manh", "Cuong"];
+var arrlst = [1, 2, 3];
 //# sourceMappingURL=contextualTyping.js.map

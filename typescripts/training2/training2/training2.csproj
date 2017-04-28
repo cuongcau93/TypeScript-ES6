@@ -23,7 +23,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="Content\02-01-grammar.css" />
+    <Content Include="Content\app.css" />
+    <Content Include="Content\calculator.css" />
+    <Content Include="images\bg.png" />
+    <Content Include="images\clear.png" />
+    <Content Include="images\pause.png" />
+    <Content Include="images\start.png" />
     <Content Include="index.html" />
+    <Content Include="View\02-01-grammar.html" />
+    <Content Include="View\02-02-object.html" />
+    <Content Include="View\02-03-function.html" />
+    <Content Include="View\02-04-interfaces.html" />
+    <Content Include="View\02-05-class-car.html" />
+    <Content Include="View\02-06-class-auto.html" />
+    <Content Include="View\02-07-class-calculator.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +49,13 @@
     <TypeScriptCompile Include="Generics.ts" />
     <TypeScriptCompile Include="Interface.ts" />
     <TypeScriptCompile Include="let.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\02-01-grammar.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\02-02-objects.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\02-03-function.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\02-04-interfaces.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\02-05-class-car.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\02-06-class-auto.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\02-07-class-calculator.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -46,10 +67,7 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="js\" />
-    <Folder Include="ts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>
@@ -79,6 +97,17 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptRemoveComments>true</TypeScriptRemoveComments>

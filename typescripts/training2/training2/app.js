@@ -96,7 +96,7 @@ var list2 = ["anh", "yeu", "em"];
 //Tuple kieu nhu mang nhung phai khai bao truoc cac phan tu
 //cac gia tri ban dau kieu tuple phai trung vs dang khai bao, con lai thif dc thoai mai nhung phair la hai kieu l kb do
 var tuple;
-tuple = ["cuonf", 12, 12, , "cuong"];
+tuple = ["cuon", 12, 12, , "cuong"];
 tuple[3] = "aaaa";
 console.log("tuple");
 console.log(tuple[7]);
