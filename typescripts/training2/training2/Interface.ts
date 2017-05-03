@@ -138,7 +138,7 @@ interface Point {
 }
 //su dung constructor cua Point de kiem tra
 //sau khi gan thi x va y se khong the thay doi
-let point1: Point = { x: 10, y: 20 };
+//let point1: Point = { x: 10, y: 20 };
 //point1.x = 5; => error !
 
 //Readonly array

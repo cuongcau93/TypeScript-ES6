@@ -26,11 +26,21 @@
     <Content Include="Content\02-01-grammar.css" />
     <Content Include="Content\app.css" />
     <Content Include="Content\calculator.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="images\bg.png" />
     <Content Include="images\clear.png" />
     <Content Include="images\pause.png" />
     <Content Include="images\start.png" />
     <Content Include="index.html" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.3.js" />
+    <Content Include="Scripts\jquery-1.6.3.min.js" />
+    <Content Include="Scripts\modernizr.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="View\02-01-grammar.html" />
     <Content Include="View\02-02-object.html" />
     <Content Include="View\02-03-function.html" />
@@ -38,6 +48,8 @@
     <Content Include="View\02-05-class-car.html" />
     <Content Include="View\02-06-class-auto.html" />
     <Content Include="View\02-07-class-calculator.html" />
+    <Content Include="View\View_Module\04-01-internal-implicit.html" />
+    <Content Include="View\View_Module\04-02-internal.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -56,7 +68,10 @@
     <TypeScriptCompile Include="Scripts\TypeScript\02-05-class-car.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\02-06-class-auto.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\02-07-class-calculator.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\Type_Module\04-01-global-module.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\Type_Module\04-02-internal.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\toastr.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

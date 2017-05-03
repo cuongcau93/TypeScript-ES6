@@ -89,7 +89,7 @@ var mySquares = createSquare({ width: 100, opacity: 0.5 });
 console.log(mySquares);
 //su dung constructor cua Point de kiem tra
 //sau khi gan thi x va y se khong the thay doi
-var point1 = { x: 10, y: 20 };
+//let point1: Point = { x: 10, y: 20 };
 //point1.x = 5; => error !
 //Readonly array
 //Khong thay doi mang khi ma da gan gia tri
