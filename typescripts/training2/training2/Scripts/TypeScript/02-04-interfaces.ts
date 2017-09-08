@@ -84,6 +84,7 @@ namespace demo_02_04 {
             calcRating: calcRating
         }
     }
+
     var s = sessionEvaluator();
     s.addRating(4);
     s.addRating(5);

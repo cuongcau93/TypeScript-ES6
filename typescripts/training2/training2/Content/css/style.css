@@ -1,0 +1,157 @@
+﻿body {
+    margin: 10px;
+    background: turquoise;
+}
+
+.home {
+    width: 975px;
+    height: 800px;
+    margin: auto;
+    background: white;
+    padding: 4px;
+}
+
+.hero-unit {
+    background: #9B9B9B;
+}
+
+.container {
+    margin-top: 20px;
+    background: #9B9B9B;
+}
+
+.space {
+    float: left;
+    margin-right: 5%;
+    margin-bottom: 1%;
+}
+
+.arrow {
+    float: left;
+    margin-right: -50px;
+    font-size: 0;
+}
+
+.arrow-typeOfMeeting {
+    float: left;
+    margin-right: -50px;
+    font-size: 0;
+}
+
+.arrow-end {
+    float: left;
+    margin-right: -50px;
+    font-size: 0;
+}
+
+.inner-arrow {
+    width: 142px;
+    height: 58px;
+    display: inline-block;
+    background-color: #9B9B9B;
+    text-align: center;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 58px;
+    vertical-align: middle;
+}
+
+.inner-arrow1 {
+    background-color: #4c7baa;
+    color: white;
+}
+
+
+.arrow:before, .arrow:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 29px solid transparent;
+    vertical-align: middle;
+}
+
+
+
+.typeOfMeeting:after {
+    border-left-color: red;
+}
+
+.arrow-typeOfMeeting:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 29px solid transparent;
+    vertical-align: middle;
+}
+
+
+.arrow-end:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 29px solid transparent;
+    vertical-align: middle;
+}
+
+.arrow-typeOfMeeting:after {
+    border-left-color: #9B9B9B;
+}
+
+.activeTypeOfMeeting:after {
+    border-left-color: #4c7baa;
+}
+
+.arrow:before {
+    border-top-color: #9B9B9B;
+    border-bottom-color: #9B9B9B;
+    border-right-color: #9B9B9B;
+}
+
+.active:before {
+    border-top-color: #4c7baa;
+    border-bottom-color: #4c7baa;
+    border-right-color: #4c7baa;
+}
+
+.arrow-end:before {
+    border-top-color: #9B9B9B;
+    border-bottom-color: #9B9B9B;
+    border-right-color: #9B9B9B;
+}
+
+.arrow:after {
+    border-left-color: #9B9B9B;
+}
+
+.active:after {
+    border-left-color: #4c7baa;
+}
+
+.content {
+    margin-top: 8%;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.note {
+    margin-top: 30px;
+    padding: 10px;
+    background: #e5e5e5;
+}
+
+.meeting-type {
+    background: white;
+    width: 153px;
+    height: 36px;
+    margin-right: 15px;
+}
+
+.text-active {
+    background: #007fff;
+    color: white;
+}

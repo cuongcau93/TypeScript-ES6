@@ -17,6 +17,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -26,6 +27,7 @@
     <Content Include="Content\02-01-grammar.css" />
     <Content Include="Content\app.css" />
     <Content Include="Content\calculator.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="images\bg.png" />
@@ -48,6 +50,7 @@
     <Content Include="View\02-05-class-car.html" />
     <Content Include="View\02-06-class-auto.html" />
     <Content Include="View\02-07-class-calculator.html" />
+    <Content Include="View\02-08-BigProject.html" />
     <Content Include="View\View_Module\04-01-internal-implicit.html" />
     <Content Include="View\View_Module\04-02-internal.html" />
     <Content Include="web.config" />
@@ -68,6 +71,7 @@
     <TypeScriptCompile Include="Scripts\TypeScript\02-05-class-car.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\02-06-class-auto.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\02-07-class-calculator.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\bigProject.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\Type_Module\04-01-global-module.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\Type_Module\04-02-internal.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
