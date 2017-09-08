@@ -1,56 +1,88 @@
-﻿
+﻿/// <reference path="../typings/jquery/jquery.d.ts" />
+
+namespace IRMTypeOfMeeting {
+
+    interface ITypeOfMeeting {
+
+        $videoConference: JQuery;
+        $teleconference: JQuery;
+        $faceToFace: JQuery;
+        $noteFaceToFace: JQuery;
+        $noteVideoConference: JQuery;
+        $noteTeleconference: JQuery;
+
+        wireEvents(faceToFaceButton, videoConferenceButton, teleconferenceButton): void;
+        faceToFace(): void;
+        videoConference(): void;
+        teleconference(): void;
+
+    }
+
+    export class TypeOfMeeting implements ITypeOfMeeting {
+
+        $videoConference: JQuery = $('.video-conference');
+        $teleconference: JQuery = $('.teleconference');
+        $faceToFace: JQuery = $('.face-to-face');
+        $noteFaceToFace: JQuery = $('.note-faceToFace');
+        $noteVideoConference: JQuery = $('.note-videoConference');
+        $noteTeleconference: JQuery = $('.note-teleconference');
+
+        private textActive: string = 'text-active';
+
+        constructor() {
+
+            this.wireEvents(this.$faceToFace, this.$videoConference, this.$teleconference);
+
+        }
+
+
+        wireEvents(faceToFaceButton, videoConferenceButton, teleconferenceButton): void {
+
+            faceToFaceButton.click(event => {
+                this.faceToFace();
+            });
+
+            videoConferenceButton.click(event => {
+                this.videoConference();
+            });
+
+            teleconferenceButton.click(event => {
+                this.teleconference();
+            });
+
+        }
+
+        faceToFace() {
+            $('.button-type button').removeClass(this.textActive);
+            this.$faceToFace.addClass(this.textActive);
+
+            this.$noteFaceToFace.show();
+            this.$noteVideoConference.hide();
+            this.$noteTeleconference.hide();
+        }
+
+        videoConference() {
+            $('.button-type button').removeClass(this.textActive);
+            this.$videoConference.addClass(this.textActive);
+
+            this.$noteFaceToFace.hide();
+            this.$noteVideoConference.show();
+            this.$noteTeleconference.hide();
+        }
+
+        teleconference() {
+            $('.button-type button').removeClass(this.textActive);
+            this.$teleconference.addClass(this.textActive);
+
+            this.$noteFaceToFace.hide();
+            this.$noteVideoConference.hide();
+            this.$noteTeleconference.show();
+        }
+
+    }
+}
+
+
 $(document).ready(function () {
-    var typeOfMeeting = new TypeOfMeeting();
+    var typeOfMeeting = new IRMTypeOfMeeting.TypeOfMeeting();
 });
-
-interface ITypeOfMeeting {
-    wireEvents(startButton, pauseButton, clearButton): void;
-}
-
-class TypeOfMeeting implements ITypeOfMeeting {
-
-    constructor() {
-        //this.wireEvents('','','');
-    }
-
-    wireEvents(faceToFaceButton, videoConferenceButton, teleconferenceButton): void {
-
-        $(faceToFaceButton).
-            addEventListener("click", this.faceToFace, false);
-        $(videoConferenceButton).
-            addEventListener("click", this.videoConference, false);
-        document.getElementById(teleconferenceButton).
-            addEventListener("click", this.teleconference, false);
-    }
-
-    faceToFace(): void {
-        $('.face-to-face').addClass('text-active');
-        $('.video-conference').removeClass('text-active');
-        $('.teleconference').removeClass('text-active');
-
-        $('.note-faceToFace').show();
-        $('.note-videoConference').hide();
-        $('.note-teleconference').hide();
-    }
-
-    videoConference(): void {
-        $('.video-conference').addClass('text-active');
-        $('.face-to-face').removeClass('text-active');
-        $('.teleconference').removeClass('text-active');
-
-        $('.note-faceToFace').hide();
-        $('.note-videoConference').show();
-        $('.note-teleconference').hide();
-    }
-
-    teleconference(): void {
-        $('.teleconference').addClass('text-active');
-        $('.face-to-face').removeclass('text-active');
-        $('.video-conference').removeclass('text-active');
-
-        $('.note-facetoface').hide();
-        $('.note-videoconference').hide();
-        $('.note-teleconference').show();
-    }
-
-}

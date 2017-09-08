@@ -17,3 +17,4 @@ C:\Users\ManhCuong\Documents\GitHub\TypeScript-ES6\typescripts\training2\trainin
 C:\Users\ManhCuong\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\obj\Debug\training2.csproj.CoreCompileInputs.cache
 C:\Users\ManhCuong\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\obj\Debug\training2.dll
 C:\Users\ManhCuong\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\obj\Debug\training2.pdb
+C:\Users\123\Documents\GitHub\TypeScript-ES6\typescripts\training2\training2\obj\Debug\training2.csproj.CoreCompileInputs.cache
