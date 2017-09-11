@@ -53,6 +53,7 @@
     <Content Include="View\02-06-class-auto.html" />
     <Content Include="View\02-07-class-calculator.html" />
     <Content Include="View\02-08-BigProject.html" />
+    <Content Include="View\02-09-uploadFile.html" />
     <Content Include="View\View_Module\04-01-internal-implicit.html" />
     <Content Include="View\View_Module\04-02-internal.html" />
     <Content Include="web.config" />

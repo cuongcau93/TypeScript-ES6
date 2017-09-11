@@ -51,5 +51,12 @@ var IRMTypeOfMeeting;
 })(IRMTypeOfMeeting || (IRMTypeOfMeeting = {}));
 $(document).ready(function () {
     var typeOfMeeting = new IRMTypeOfMeeting.TypeOfMeeting();
+    $(".add-number").live('click', function () {
+        alert();
+        var $tr = $(this).closest('.tr_clone');
+        var $clone = $tr.clone();
+        $clone.find(':text').val('');
+        $tr.after($clone);
+    });
 });
 //# sourceMappingURL=bigProject.js.map
