@@ -58,9 +58,12 @@
 
                 <div class="content-agenda">
                     
-                    <input type="text" name="name" value="" class="summary-meeting input" />
+                    <div class="input-summary">
+                        <input type="text" name="name" value="" class="summary-meeting input" />
+                        <span class="compulsory-field">&nbsp;*</span>
+                    </div>
+                    
                     <span class="label">Brief summary of Meeting Agenda</span>
-                    <span class="compulsory-field">&nbsp;*</span>
                     
                     <div class="upload-file">
                         
@@ -102,7 +105,15 @@
                             </div>
                             <div class="form-group">
                                 <div class="row">
-                                    <input type="text" class="txt-first-name" name="txt-first-name" />
+                                    <!--<input type="number" class="txt-first-name" name="txt-first-name" />-->
+                                    <div class="dropdown">
+                                        <select name="one" class="dropdown-select">
+                                            <option value="">Select…</option>
+                                            <option value="1">Option #1</option>
+                                            <option value="2">Option #2</option>
+                                            <option value="3">Option #3</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -111,6 +122,9 @@
                                 </div>
                             </div>
                         </div>
+
+                      
+
                     </div>
                     <span class="add-number">+</span>
                 </div>

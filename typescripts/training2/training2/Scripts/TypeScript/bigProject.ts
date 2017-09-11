@@ -2,6 +2,12 @@
 
 namespace IRMTypeOfMeeting {
 
+
+    $(document).ready(function () {
+        var typeOfMeeting = new TypeOfMeeting();
+    });
+
+
     interface ITypeOfMeeting {
 
         $videoConference: JQuery;
@@ -11,14 +17,14 @@ namespace IRMTypeOfMeeting {
         $noteVideoConference: JQuery;
         $noteTeleconference: JQuery;
 
-        wireEvents(faceToFaceButton, videoConferenceButton, teleconferenceButton): void;
+        wireEvents(faceToFaceButton: JQuery, videoConferenceButton: JQuery, teleconferenceButton: JQuery): void;
         faceToFace(): void;
         videoConference(): void;
         teleconference(): void;
 
     }
 
-    export class TypeOfMeeting implements ITypeOfMeeting {
+    class TypeOfMeeting implements ITypeOfMeeting {
 
         $videoConference: JQuery = $('.video-conference');
         $teleconference: JQuery = $('.teleconference');
@@ -84,14 +90,14 @@ namespace IRMTypeOfMeeting {
 
 
 $(document).ready(function () {
-    var typeOfMeeting = new IRMTypeOfMeeting.TypeOfMeeting();
 
-    $(".add-number").live('click', function () {
-        alert()
-        var $tr = $(this).closest('.tr_clone');
-        var $clone = $tr.clone();
-        $clone.find(':text').val('');
-        $tr.after($clone);
+    $(".add-number").on('click', function () {
+        $(".form-item:last-child").clone().appendTo(".form");
+        $(".form-item:last-child input").val("");
     });
+
+    //$("#eventBtn").click(function () {
+    //    $("#BigButton").clone().appendTo("#rightDiv");
+    //});
 
 });

@@ -1,6 +1,9 @@
 /// <reference path="../typings/jquery/jquery.d.ts" />
 var IRMTypeOfMeeting;
 (function (IRMTypeOfMeeting) {
+    $(document).ready(function () {
+        var typeOfMeeting = new TypeOfMeeting();
+    });
     var TypeOfMeeting = (function () {
         function TypeOfMeeting() {
             this.$videoConference = $('.video-conference');
@@ -47,16 +50,14 @@ var IRMTypeOfMeeting;
         };
         return TypeOfMeeting;
     }());
-    IRMTypeOfMeeting.TypeOfMeeting = TypeOfMeeting;
 })(IRMTypeOfMeeting || (IRMTypeOfMeeting = {}));
 $(document).ready(function () {
-    var typeOfMeeting = new IRMTypeOfMeeting.TypeOfMeeting();
-    $(".add-number").live('click', function () {
-        alert();
-        var $tr = $(this).closest('.tr_clone');
-        var $clone = $tr.clone();
-        $clone.find(':text').val('');
-        $tr.after($clone);
+    $(".add-number").on('click', function () {
+        $(".form-item:last-child").clone().appendTo(".form");
+        $(".form-item:last-child input").val("");
     });
+    //$("#eventBtn").click(function () {
+    //    $("#BigButton").clone().appendTo("#rightDiv");
+    //});
 });
 //# sourceMappingURL=bigProject.js.map
