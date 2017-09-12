@@ -106,6 +106,7 @@
     <br><br>
     <div id="status1"></div>
     <script>
+
 //function sendFileToServer(formData,status)
 //{
 //    var uploadURL ="http://hayageek.com/examples/jquery/drag-drop-file-upload/upload.php"; //Upload URL
@@ -143,7 +144,8 @@
 //    status.setAbort(jqXHR);
 //}
 
-var rowCount=0;
+var rowCount = 0;
+
 function createStatusbar(obj)
 {
      rowCount++;
@@ -152,7 +154,7 @@ function createStatusbar(obj)
      this.statusbar = $("<div class='statusbar "+row+"'></div>");
      this.filename = $("<div class='filename'></div>").appendTo(this.statusbar);
      this.size = $("<div class='filesize'></div>").appendTo(this.statusbar);
-     this.progressBar = $("<div class='progressBar'><div></div></div>").appendTo(this.statusbar);
+
      this.abort = $("<div class='abort'>Abort</div>").appendTo(this.statusbar);
      obj.after(this.statusbar);
 
@@ -172,16 +174,8 @@ function createStatusbar(obj)
 
         this.filename.html(name);
         this.size.html(sizeStr);
-    }
-    this.setProgress = function(progress)
-    {
-        var progressBarWidth =progress*this.progressBar.width()/ 100;
-        this.progressBar.find('div').animate({ width: progressBarWidth }, 10).html(progress + "% ");
-        if(parseInt(progress) >= 100)
-        {
-            this.abort.hide();
         }
-    }
+
     this.setAbort = function(jqxhr)
     {
         var sb = this.statusbar;
@@ -191,73 +185,78 @@ function createStatusbar(obj)
             sb.hide();
         });
     }
-}
+        }
+
 function handleFileUpload(files,obj)
 {
    for (var i = 0; i < files.length; i++)
    {
+
         var fd = new FormData();
         fd.append('file', files[i]);
 
         var status = new createStatusbar(obj); //Using this we can set progress.
-        status.setFileNameSize(files[i].name,files[i].size);
-        sendFileToServer(fd,status);
+        status.setFileNameSize(files[i].name, files[i].size);
 
+        console.log(status);
+        console.log('fd'+fd)
+
+        //sendFileToServer(fd,status);
    }
 }
-$(document).ready(function()
-{
 
-var obj = $("#dragandrophandler");
+        $(document).ready(function () {
 
-$( "input" ).change(function() {
-	console.log(this.files);
-	var files =this.files;
-	 handleFileUpload(files,obj);
-});
+            var obj = $("#dragandrophandler");
 
+            $("input").change(function () {
+                console.log(this.files);
+                var files = this.files;
+                handleFileUpload(files, obj);
+            });
 
-obj.on('dragenter', function (e)
-{
-    e.stopPropagation();
-    e.preventDefault();
-    $(this).css('border', '2px solid #0B85A1');
-});
-obj.on('dragover', function (e)
-{
-     e.stopPropagation();
-     e.preventDefault();
-});
-obj.on('drop', function (e)
-{
+            obj.on('dragenter', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                $(this).css('border', '2px solid blue');
+            });
 
-     $(this).css('border', '2px dotted #0B85A1');
-     e.preventDefault();
-     var files = e.originalEvent.dataTransfer.files;
+            obj.on('dragover', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+            });
 
-     //We need to send dropped files to Server
-     handleFileUpload(files,obj);
-	 console.log(files);
-	  console.log(obj);
-});
-$(document).on('dragenter', function (e)
-{
-    e.stopPropagation();
-    e.preventDefault();
-});
-$(document).on('dragover', function (e)
-{
-  e.stopPropagation();
-  e.preventDefault();
-  obj.css('border', '2px dotted #0B85A1');
-});
-$(document).on('drop', function (e)
-{
-    e.stopPropagation();
-    e.preventDefault();
-});
+            obj.on('drop', function (e) {
 
-});
-    </script>
+                $(this).css('border', '2px dotted #0B85A1');
+                e.preventDefault();
+                var files = e.originalEvent.dataTransfer.files;
+
+                //We need to send dropped files to Server
+                handleFileUpload(files, obj);
+                console.log(files);
+                console.log(obj);
+
+            });
+
+            $(document).on('dragenter', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+            });
+
+            $(document).on('dragover', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                obj.css('border', '2px dotted #0B85A1');
+            });
+
+            $(document).on('drop', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+            });
+
+        });
+
+</script>
 </body>
 </html>

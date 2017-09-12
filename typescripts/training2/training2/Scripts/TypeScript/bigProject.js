@@ -56,8 +56,8 @@ $(document).ready(function () {
         $(".form-item:last-child").clone().appendTo(".form");
         $(".form-item:last-child input").val("");
     });
-    //$("#eventBtn").click(function () {
-    //    $("#BigButton").clone().appendTo("#rightDiv");
-    //});
+});
+$(document).ready(function () {
+    console.log(this.files);
 });
 //# sourceMappingURL=bigProject.js.map
