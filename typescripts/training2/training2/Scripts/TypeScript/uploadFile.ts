@@ -1,18 +1,20 @@
 ﻿class Agenda {
 
     obj: JQuery = $("#dragandrophandler");
-    files: any;
+    a: JQuery = $('input[type = "file"]');
 
     constructor() {
         this.wireEvents();
     }
 
     wireEvents() {
-        $("input").change(event => {
-            console.log('aaa');
-            console.log(this);
-            var files = $(".box__file").files;
-            console.log(files);
+        $('input[type = "file"]').change(event => {
+            //var a = $('input');
+            //var files = a.files;
+            console.log($('#file').files);
+            console.log($('input[type = "file"]'));
+            console.log($('input[type = "file"]'[0]).files);
+            console.log($('input[type = "file"]').files);
             //handleFileUpload(files, obj);
         });
     }

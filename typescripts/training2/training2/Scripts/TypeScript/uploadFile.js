@@ -1,15 +1,17 @@
 var Agenda = (function () {
     function Agenda() {
         this.obj = $("#dragandrophandler");
+        this.a = $('input[type = "file"]');
         this.wireEvents();
     }
     Agenda.prototype.wireEvents = function () {
-        var _this = this;
-        $("input").change(function (event) {
-            console.log('aaa');
-            console.log(_this);
-            var files = $(".box__file").files;
-            console.log(files);
+        $('input[type = "file"]').change(function (event) {
+            //var a = $('input');
+            //var files = a.files;
+            console.log($('#file').files);
+            console.log($('input[type = "file"]'));
+            console.log($('input[type = "file"]'[0]).files);
+            console.log($('input[type = "file"]').files);
             //handleFileUpload(files, obj);
         });
     };

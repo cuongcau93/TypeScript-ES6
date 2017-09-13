@@ -154,7 +154,6 @@ function createStatusbar(obj)
      this.statusbar = $("<div class='statusbar "+row+"'></div>");
      this.filename = $("<div class='filename'></div>").appendTo(this.statusbar);
      this.size = $("<div class='filesize'></div>").appendTo(this.statusbar);
-
      this.abort = $("<div class='abort'>Abort</div>").appendTo(this.statusbar);
      obj.after(this.statusbar);
 
@@ -185,7 +184,7 @@ function createStatusbar(obj)
             sb.hide();
         });
     }
-        }
+}
 
 function handleFileUpload(files,obj)
 {
@@ -198,9 +197,6 @@ function handleFileUpload(files,obj)
         var status = new createStatusbar(obj); //Using this we can set progress.
         status.setFileNameSize(files[i].name, files[i].size);
 
-        console.log(status);
-        console.log('fd'+fd)
-
         //sendFileToServer(fd,status);
    }
 }
@@ -210,8 +206,8 @@ function handleFileUpload(files,obj)
             var obj = $("#dragandrophandler");
 
             $("input").change(function () {
-                console.log('input'.files);
-                var files = 'input'.files;
+                
+                var files = $('input')[0].files;
                 handleFileUpload(files, obj);
             });
 
