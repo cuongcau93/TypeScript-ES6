@@ -210,8 +210,8 @@ function handleFileUpload(files,obj)
             var obj = $("#dragandrophandler");
 
             $("input").change(function () {
-                console.log(this.files);
-                var files = this.files;
+                console.log('input'.files);
+                var files = 'input'.files;
                 handleFileUpload(files, obj);
             });
 
