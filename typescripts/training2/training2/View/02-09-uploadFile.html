@@ -186,6 +186,7 @@ function createStatusbar(obj)
             sb.hide();
         });
     }
+
 }
 
 function handleFileUpload(files,obj)
@@ -232,7 +233,6 @@ function handleFileUpload(files,obj)
                 $(this).css('border', '2px dotted #0B85A1');
                 e.preventDefault();
                 var files = e.originalEvent.dataTransfer.files;
-
                 //We need to send dropped files to Server
                 handleFileUpload(files, obj);
                 console.log(files);
