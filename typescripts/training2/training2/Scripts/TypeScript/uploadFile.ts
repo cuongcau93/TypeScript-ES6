@@ -1,5 +1,5 @@
 ﻿class Agenda {
-    //dataTransfer: DataTransfer;
+
     obj: JQuery = $("#dragandrophandler");
     inputFile: any = $('input[type = "file"]');
 
@@ -11,7 +11,11 @@
 
         this.inputFile.change(event => {
             console.log(event);
-            var files = this.inputFile[0].files
+            var files = this.inputFile[0].files;
+
+            console.log(typeof (files));
+            console.log(files.name);
+            this.checkFormatFileUpload(files)
             console.log(files);
         });
 
@@ -34,18 +38,24 @@
 
         });
 
-        //this.obj.on('drop', (e) => {
-        //    let dataTransfer: DataTransfer;
-        //    $(this).css('border', '2px dotted #0B85A1');
-        //    e.preventDefault();
-        
-        //    var files = e.originalEvent.dataTransfer.files;
-        //    //We need to send dropped files to Server
-        //    //handleFileUpload(files, obj);
-        //    //console.log(files);
-        //    //console.log(obj);
+    }
 
-        //});
+    checkFormatFileUpload(file: any) {
+        var _validFileExtensions = [".xls", ".doc", ".docx", ".pdf", ".png"];
+            var blnValid = false;
+            var sFileName = file.name;
+            for (var j = 0; j < _validFileExtensions.length; j++) {
+                var sCurExtension = _validFileExtensions[j];
+                if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                    blnValid = true;
+                    break;
+                }
+
+                if (!blnValid) {
+                    alert("Sorry, " + sFileName + " is invalid, allowed extensions are: " + _validFileExtensions.join(", "));
+                    return false;
+                }
+            }
     }
 
     notEventHandler(event) {
