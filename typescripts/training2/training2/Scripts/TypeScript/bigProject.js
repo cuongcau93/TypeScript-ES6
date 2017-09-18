@@ -1,4 +1,3 @@
-/// <reference path="../typings/jquery/jquery.d.ts" />
 var IRMTypeOfMeeting;
 (function (IRMTypeOfMeeting) {
     $(document).ready(function () {
@@ -13,8 +12,24 @@ var IRMTypeOfMeeting;
             this.$noteVideoConference = $('.note-videoConference');
             this.$noteTeleconference = $('.note-teleconference');
             this.textActive = 'text-active';
-            this.wireEvents(this.$faceToFace, this.$videoConference, this.$teleconference);
+            //this.wireEvents(this.$faceToFace, this.$videoConference, this.$teleconference);
+            this.MeetingType();
         }
+        TypeOfMeeting.prototype.MeetingType = function () {
+            var _this = this;
+            $('.meeting-type').on('click', function (event) {
+                var $target = $(event.target);
+                if ($target.hasClass('face-to-face')) {
+                    _this.faceToFace();
+                }
+                if ($target.hasClass('video-conference')) {
+                    _this.videoConference();
+                }
+                if ($target.hasClass('teleconference')) {
+                    _this.teleconference();
+                }
+            });
+        };
         TypeOfMeeting.prototype.wireEvents = function (faceToFaceButton, videoConferenceButton, teleconferenceButton) {
             var _this = this;
             faceToFaceButton.click(function (event) {
@@ -51,12 +66,6 @@ var IRMTypeOfMeeting;
         return TypeOfMeeting;
     }());
 })(IRMTypeOfMeeting || (IRMTypeOfMeeting = {}));
-$(document).ready(function () {
-    $(".add-number").on('click', function () {
-        $(".form-item:last-child").clone().appendTo(".form");
-        $(".form-item:last-child input").val("");
-    });
-});
 $(document).ready(function () {
     console.log(this.files);
 });

@@ -1,5 +1,4 @@
-﻿/// <reference path="../typings/jquery/jquery.d.ts" />
-
+﻿
 namespace IRMTypeOfMeeting {
 
 
@@ -36,11 +35,27 @@ namespace IRMTypeOfMeeting {
         private textActive: string = 'text-active';
 
         constructor() {
-
-            this.wireEvents(this.$faceToFace, this.$videoConference, this.$teleconference);
-
+            //this.wireEvents(this.$faceToFace, this.$videoConference, this.$teleconference);
+            this.MeetingType();
         }
 
+        MeetingType(): void {
+            $('.meeting-type').on('click', event => {
+                var $target = $(event.target);
+
+                if ($target.hasClass('face-to-face')) {
+                    this.faceToFace();
+                }
+
+                if ($target.hasClass('video-conference')) {
+                    this.videoConference();
+                }
+
+                if ($target.hasClass('teleconference')) {
+                    this.teleconference();
+                }
+            });
+        }
 
         wireEvents(faceToFaceButton, videoConferenceButton, teleconferenceButton): void {
 
@@ -87,15 +102,6 @@ namespace IRMTypeOfMeeting {
 
     }
 }
-
-
-$(document).ready(function () {
-
-    $(".add-number").on('click', function () {
-        $(".form-item:last-child").clone().appendTo(".form");
-        $(".form-item:last-child input").val("");
-    });
-});
 
 $(document).ready(function () {
     console.log(this.files);
