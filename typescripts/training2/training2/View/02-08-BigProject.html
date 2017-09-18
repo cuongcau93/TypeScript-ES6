@@ -5,9 +5,11 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="../../Content/css/style.css" rel="stylesheet" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../Scripts/TypeScript/bigProject.js"></script>
     <script src="../Scripts/TypeScript/uploadFile.js"></script>
+    <script src="../Scripts/TypeScript/02-08-OrtherAttendees.js"></script>
 
 </head>
 <body>
@@ -60,11 +62,11 @@
                 <div class="content-agenda">
                     
                     <div class="input-summary">
-                        <input type="text" name="name" value="" class="summary-meeting input" />
-                        <span class="compulsory-field">&nbsp;*</span>
+                        <textarea type="text" name="name" placeholder="Brief summary of Meeting Agenda" value="" class="summary-meeting input"></textarea>
+                    <span class="compulsory-field">&nbsp;*</span>
                     </div>
                     
-                    <span class="label">Brief summary of Meeting Agenda</span>
+                    <!--<span class="label">Brief summary of Meeting Agenda</span>-->
                     
                     <div class="upload-file">
                         
@@ -103,25 +105,49 @@
                         <div class="form-item">
                             <div class="form-group">
                                 <div class="row">
-                                    <input type="text" class="txt-first-name" name="txt-first-name" />
+                                    <input type="text" class="txt-value txt-name" name="txt-name" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
-                                    <!--<input type="number" class="txt-first-name" name="txt-first-name" />-->
                                     <div class="dropdown">
                                         <select name="one" class="dropdown-select">
-                                            <option value="">Select…</option>
-                                            <option value="1">Option #1</option>
-                                            <option value="2">Option #2</option>
-                                            <option value="3">Option #3</option>
+                                            <option value="0">Research Analyst</option>
+                                            <option value="1">Research Analyst</option>
+                                            <option value="2">Research Analyst</option>
+                                            <option value="3">Research Analyst</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
-                                    <input type="text" class="txt-first-name" name="txt-first-name" />
+                                    <input type="text" class="txt-value txt-email" name="txt-email" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-item">
+                            <div class="form-group">
+                                <div class="row">
+                                    <input type="text" class="txt-value txt-name" name="txt-name" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="dropdown">
+                                        <select name="one" class="dropdown-select">
+                                            <option value="0">Research Analyst</option>
+                                            <option value="1">Research Analyst</option>
+                                            <option value="2">Research Analyst</option>
+                                            <option value="3">Research Analyst</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <input type="text" class="txt-value txt-email" name="txt-email" />
                                 </div>
                             </div>
                         </div>
@@ -133,12 +159,8 @@
             </div>
 
             <div class="footer">
-                <button class="back" style="background: green; color: white; width: 80px; height: 40px">Back</button>
+                <button class="back submit" style="background: green; color: white; width: 80px; height: 40px">Back</button>
                 <button class="next" style="background: red; color: white; width: 80px; height: 40px">Next</button>
-            </div>
-
-            <div>
-
             </div>
 
         </div>

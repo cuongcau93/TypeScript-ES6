@@ -2,6 +2,10 @@
 
     obj: JQuery = $("#dragandrophandler");
     inputFile: any = $('input[type = "file"]');
+    objAgenda: object = {
+        summary: "",
+        file: File
+    }
 
     constructor() {
         this.wireEvents();
@@ -10,13 +14,13 @@
     wireEvents() {
 
         this.inputFile.change(event => {
-            console.log(event);
-            var files = this.inputFile[0].files;
 
-            console.log(typeof (files));
-            console.log(files.name);
-            this.checkFormatFileUpload(files)
-            console.log(files);
+            var files = this.inputFile[0].files;
+            this.handleFileUpload(files);
+            if (this.handleFileUpload(files)) {
+                console.log(files);
+            }
+
         });
 
         this.obj.on('dragenter', event => {
@@ -29,38 +33,63 @@
         });
 
         this.obj.on('drop', (event: any) => {
-
-            $(this).css('border', '2px dotted #0B85A1');
+            $(this.obj).css('border', '2px dotted #0B85A1');
             event.preventDefault();
-            let transfer = event.dataTransfer;
             var files = event.originalEvent.dataTransfer.files;
-            console.log(files);
+            this.handleFileUpload(files);
+        });
 
+        $(document).on('dragenter', event => {
+            this.notEventHandler(event);
+        });
+
+        $(document).on('dragover', event => {
+            this.notEventHandler(event);
+            $(this.obj).css('border', '2px dotted #0B85A1');
+        });
+
+        $(document).on('drop', event => {
+            this.notEventHandler(event);
         });
 
     }
 
-    checkFormatFileUpload(file: any) {
+    notEventHandler(event) {
+        event.stopPropagation();
+        event.preventDefault();
+    }
+
+    handleFileUpload(files): Boolean {
+        let maxsize: number = 51200;
         var _validFileExtensions = [".xls", ".doc", ".docx", ".pdf", ".png"];
-            var blnValid = false;
-            var sFileName = file.name;
-            for (var j = 0; j < _validFileExtensions.length; j++) {
-                var sCurExtension = _validFileExtensions[j];
-                if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
-                    blnValid = true;
-                    break;
+        for (var i = 0; i < files.length; i++) {
+
+            var sFileName = files[i].name;
+            console.log(files[i].size);
+
+            if (files[i].size <= maxsize || files[i].fileSize <= maxsize) {
+                var blnValid = false;
+                for (var j = 0; j < _validFileExtensions.length; j++) {
+                    var sCurExtension = _validFileExtensions[j];
+                    if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                        blnValid = true;
+                        break;
+                    }
                 }
 
                 if (!blnValid) {
                     alert("Sorry, " + sFileName + " is invalid, allowed extensions are: " + _validFileExtensions.join(", "));
                     return false;
                 }
-            }
-    }
 
-    notEventHandler(event) {
-        event.stopPropagation();
-        event.preventDefault();
+            }
+            else {
+                alert('Allowed file size exceeded. (Max. 50 MB)');
+                return false;
+            }
+        }
+
+        return true;
     }
 
 }

@@ -75,6 +75,7 @@
     <TypeScriptCompile Include="Scripts\TypeScript\02-06-class-auto.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\02-07-class-calculator.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\bigProject.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\02-08-OrtherAttendees.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\Type_Module\04-01-global-module.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\Type_Module\04-02-internal.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\uploadFile.ts" />

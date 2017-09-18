@@ -184,7 +184,7 @@
 
 .input {
     outline: 0;
-    padding: 0 15px;
+    padding: 15px 15px;
     font-size: 16px;
     position: relative;
 }
@@ -335,7 +335,7 @@ input:not(:focus):valid ~ .label {
     width: 33.33%;
 }
 
-.form .row .txt-first-name {
+.form .row .txt-value {
     width: 80%;
     height: 2.6em;
     padding: 0px 10px;
