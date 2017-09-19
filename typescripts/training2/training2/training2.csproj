@@ -27,6 +27,7 @@
     <Content Include="Content\02-01-grammar.css" />
     <Content Include="Content\app.css" />
     <Content Include="Content\calculator.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
@@ -37,11 +38,16 @@
     <Content Include="index.html" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="Api\filme.json" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\libs\jquery.js" />
+    <Content Include="Scripts\libs\mustache.js" />
+    <Content Include="Scripts\libs\sammy.js" />
+    <Content Include="Scripts\libs\sammy.mustache.js" />
     <Content Include="Scripts\modernizr.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
@@ -54,6 +60,7 @@
     <Content Include="View\02-07-class-calculator.html" />
     <Content Include="View\02-08-BigProject.html" />
     <Content Include="View\02-09-uploadFile.html" />
+    <Content Include="View\02-10-sammyjs.html" />
     <Content Include="View\View_Module\04-01-internal-implicit.html" />
     <Content Include="View\View_Module\04-02-internal.html" />
     <Content Include="web.config" />
@@ -76,22 +83,30 @@
     <TypeScriptCompile Include="Scripts\TypeScript\02-07-class-calculator.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\bigProject.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\02-08-OrtherAttendees.ts" />
+    <TypeScriptCompile Include="Scripts\TypeScript\sammyjs\app.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\Type_Module\04-01-global-module.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\Type_Module\04-02-internal.ts" />
     <TypeScriptCompile Include="Scripts\TypeScript\uploadFile.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\toastr.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\sammyjs\sammyjs.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="View\template\template.ms" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mustache, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mustache.1.0.1\lib\net452\Mustache.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

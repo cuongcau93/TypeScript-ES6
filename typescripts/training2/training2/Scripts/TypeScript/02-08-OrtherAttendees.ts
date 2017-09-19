@@ -49,8 +49,6 @@ class OrtherAttendees {
 
     checkValidateInput() {
         var lengthFromItem: number = $('.form .form-item').length;
-        let lol: string = $(this.txtName[3]).val();
-        alert(lol);
         for (var i = 0; i < lengthFromItem; i++) {
 
             let name: string = $(this.txtName[i]).val();

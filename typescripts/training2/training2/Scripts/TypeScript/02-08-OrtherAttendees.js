@@ -34,8 +34,6 @@ var OrtherAttendees = (function () {
     };
     OrtherAttendees.prototype.checkValidateInput = function () {
         var lengthFromItem = $('.form .form-item').length;
-        var lol = $(this.txtName[3]).val();
-        alert(lol);
         for (var i = 0; i < lengthFromItem; i++) {
             var name_1 = $(this.txtName[i]).val();
             var email = $(this.txtEmail[i]).val();

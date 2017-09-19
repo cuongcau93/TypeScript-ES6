@@ -1,0 +1,20 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Matrix",
+    "genre": "Action",
+    "year": "1999"
+  },
+  {
+    "id": 2,
+    "name": "Pulp Fiction",
+    "genre": "Thriller",
+    "year": "1994"
+  },
+  {
+    "id": 3,
+    "name": "Inception",
+    "genre": "Action",
+    "year": "2010"
+  }
+]
