@@ -49,6 +49,8 @@
     <Content Include="Scripts\libs\sammy.js" />
     <Content Include="Scripts\libs\sammy.mustache.js" />
     <Content Include="Scripts\modernizr.js" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="View\02-01-grammar.html" />
