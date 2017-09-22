@@ -1,24 +1,27 @@
-﻿module IRMeetingRequest {
+﻿export module IRMeetingRequest {
     'use strict';
 
-    let appMain = Sammy('#main', function () {
-        this.use('Mustache', 'ms');
+    export let appMain = Sammy('#content', function () {
+
+        //this.use('Mustache', 'ms');
         let context = this;
 
-        this.get('#/', function () {
-            var context = this.context;
-            this.swap('Loaded content successfully!!!');
-        })
+        context.get('#/', function (context) {
+            //context.appMain.swap('aaaa');
+            //context.render('template/template.ms', {}).appendTo(context.$element());
+        });
 
-        appMain.get('#/filme', function (context) {
-
-            context.render('template.ms', {}, function (output) {
-                $('#content').append(output);
-            });
-
+        context.get('#/filme', function (context) {
+            context.render('template/template.ms', {}).appendTo(context.$element());
         });
 
     });
+
+    export class aaaaaaaaaaaa {
+        constructor() {
+            console.log('ssss');
+        }
+    }
 
     $(function () {
         // start the app with home route
