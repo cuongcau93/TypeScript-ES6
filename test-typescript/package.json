@@ -1,0 +1,26 @@
+{
+  "name": "test-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -d --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.2.12",
+    "@types/mustache": "^0.8.30",
+    "@types/sammy": "0.0.20",
+    "jquery": "^3.2.1",
+    "mustache": "^2.3.0",
+    "sammy": "^0.7.6",
+    "typescript": "^2.5.2",
+    "typings": "^2.1.1"
+  },
+  "devDependencies": {
+    "ts-loader": "^2.3.7",
+    "webpack": "^3.6.0"
+  }
+}

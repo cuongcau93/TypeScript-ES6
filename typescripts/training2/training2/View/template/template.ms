@@ -16,5 +16,4 @@
     </p>
     <p class="text-note note-teleconference" style="display: none">Note: Teleconference.</p>
   </div>
-
 </div>
