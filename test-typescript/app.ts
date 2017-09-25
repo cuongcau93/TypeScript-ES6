@@ -2,7 +2,7 @@ import * as $ from 'jquery';
 import * as Sammy from 'sammy';
 import * as Mustache from 'mustache';
 
-console.log($);
+
 let appMain = Sammy('body', function () {
 
         this.use('Mustache', 'html');
